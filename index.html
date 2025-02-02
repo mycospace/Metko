@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Fortgeschrittene Metakognitive Übung</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <header>
+    <h1>Fortgeschrittene Metakognitive Übung</h1>
+  </header>
+  <main>
+    <div class="container">
+      <!-- Fortschrittsleiste -->
+      <div id="progressbar">
+        <div class="step active" data-step="1">1. Identifikation</div>
+        <div class="step" data-step="2">2. Bewertung</div>
+        <div class="step" data-step="3">3. Analyse</div>
+        <div class="step" data-step="4">4. Alternativen</div>
+        <div class="step" data-step="5">5. Reflexion</div>
+      </div>
+
+      <!-- Multi-Step-Formular -->
+      <form id="metacognition-form">
+        <!-- Schritt 1: Identifikation -->
+        <div class="form-step active" data-step="1">
+          <h2>Schritt 1: Identifikation der Gedankenmuster</h2>
+          <p>Beschreiben Sie das wiederkehrende Gedankenmuster, das Sie bemerkt haben.</p>
+          <textarea id="thought-pattern" name="thoughtPattern" placeholder="Ihre Gedanken..." required></textarea>
+          <div class="error-message" id="error-step-1"></div>
+          <button type="button" class="next-btn">Weiter</button>
+        </div>
+
+        <!-- Schritt 2: Bewertung -->
+        <div class="form-step" data-step="2">
+          <h2>Schritt 2: Bewertung der Gedanken</h2>
+          <p>Bewerten Sie, wie häufig und wie belastend dieses Gedankenmuster ist.</p>
+          <label for="frequency">Häufigkeit (1 = selten, 10 = sehr häufig):</label>
+          <input type="range" id="frequency" name="frequency" min="1" max="10" value="5">
+          <span id="frequency-value">5</span>
+          <br>
+          <label for="intensity">Belastung (1 = gering, 10 = sehr stark):</label>
+          <input type="range" id="intensity" name="intensity" min="1" max="10" value="5">
+          <span id="intensity-value">5</span>
+          <div class="error-message" id="error-step-2"></div>
+          <div class="button-group">
+            <button type="button" class="prev-btn">Zurück</button>
+            <button type="button" class="next-btn">Weiter</button>
+          </div>
+        </div>
+
+        <!-- Schritt 3: Analyse -->
+        <div class="form-step" data-step="3">
+          <h2>Schritt 3: Analyse der Gedanken</h2>
+          <p>Welche kognitiven Verzerrungen können Sie in diesem Gedankenmuster identifizieren? (Mehrfachauswahl möglich)</p>
+          <label><input type="checkbox" name="distortions" value="Katastrophisieren"> Katastrophisieren</label>
+          <label><input type="checkbox" name="distortions" value="Schwarz-Weiß-Denken"> Schwarz-Weiß-Denken</label>
+          <label><input type="checkbox" name="distortions" value="Übergeneralisierung"> Übergeneralisierung</label>
+          <label><input type="checkbox" name="distortions" value="Personalisierung"> Personalisierung</label>
+          <label><input type="checkbox" name="distortions" value="Selektive Wahrnehmung"> Selektive Wahrnehmung</label>
+          <div class="error-message" id="error-step-3"></div>
+          <div class="button-group">
+            <button type="button" class="prev-btn">Zurück</button>
+            <button type="button" class="next-btn">Weiter</button>
+          </div>
+        </div>
+
+        <!-- Schritt 4: Alternative Gedanken -->
+        <div class="form-step" data-step="4">
+          <h2>Schritt 4: Entwicklung alternativer Gedanken</h2>
+          <p>Formulieren Sie alternative Gedanken oder Perspektiven, die rationaler sind.</p>
+          <textarea id="alternative-thoughts" name="alternativeThoughts" placeholder="Alternative Gedanken..." required></textarea>
+          <div class="error-message" id="error-step-4"></div>
+          <div class="button-group">
+            <button type="button" class="prev-btn">Zurück</button>
+            <button type="button" class="next-btn">Weiter</button>
+          </div>
+        </div>
+
+        <!-- Schritt 5: Reflexion -->
+        <div class="form-step" data-step="5">
+          <h2>Schritt 5: Reflexion</h2>
+          <p>Reflektieren Sie den Übungsprozess. Was haben Sie gelernt? Wie können Sie diese Erkenntnisse im Alltag anwenden?</p>
+          <textarea id="reflection" name="reflection" placeholder="Ihre Reflexion..." required></textarea>
+          <div class="error-message" id="error-step-5"></div>
+          <div class="button-group">
+            <button type="button" class="prev-btn">Zurück</button>
+            <button type="submit" class="submit-btn">Ergebnisse speichern</button>
+          </div>
+        </div>
+      </form>
+
+      <!-- Ergebnisanzeige -->
+      <div id="result" class="hidden">
+        <h2>Übungsergebnisse</h2>
+        <pre id="result-output"></pre>
+        <button id="restart-btn">Übung neu starten</button>
+      </div>
+    </div>
+  </main>
+  <footer>
+    <p>&copy; 2025 Fortgeschrittene Metakognitive Übung</p>
+  </footer>
+  <script src="app.js"></script>
+</body>
+</html>
